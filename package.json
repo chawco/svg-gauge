@@ -1,5 +1,5 @@
 {
-  "name": "svg-gauge",
+  "name": "@cryptonumerics/svg-gauge",
   "version": "1.0.5",
   "description": "Minimal SVG animated gauge with zero dependencies",
   "main": "index.js",

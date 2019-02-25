@@ -50,7 +50,7 @@
         };
 
     function animate() {
-      var progress = currentIteration / iterations, 
+      var progress = currentIteration / iterations,
           value = change * easing(progress) + start;
       // console.log(progress + ", " + value);
       step(value, currentIteration);
@@ -93,7 +93,7 @@
     function shallowCopy(/* source, ...targets*/) {
       var target = arguments[0], sources = slice.call(arguments, 1);
       sources.forEach(function(s) {
-        for(k in s) {
+        for(var k in s) {
           if(s.hasOwnProperty(k)) {
             target[k] = s[k];
           }
@@ -224,7 +224,7 @@
             largeArcFlag = typeof(largeArc) === "undefined" ? 1 : largeArc;
 
         return [
-          "M", start.x, start.y, 
+          "M", start.x, start.y,
           "A", radius, radius, 0, largeArcFlag, 1, end.x, end.y
         ].join(" ");
       }
@@ -281,8 +281,8 @@
         gaugeValuePath.setAttribute("d", pathString(radius, startAngle, angle + startAngle, flag));
       }
 
-      function setGaugeColor(value, duration) {        
-        var c = gaugeColor(value), 
+      function setGaugeColor(value, duration) {
+        var c = gaugeColor(value),
             dur = duration * 1000,
             pathTransition = "stroke " + dur + "ms ease";
             // textTransition = "fill " + dur + "ms ease";
